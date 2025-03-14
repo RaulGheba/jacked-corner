@@ -6,7 +6,7 @@ import React from 'react';
 
 function App(props) {
     return (
-        <div>ggg</div>
+        <div >ggg</div>
     );
 }
 
