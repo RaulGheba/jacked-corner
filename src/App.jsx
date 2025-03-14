@@ -10,11 +10,14 @@ import Library from "./pages/Library.jsx";
 import Store from "./pages/Store.jsx";
 import Support from "./pages/Support.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
+import AppLayout from "./ui/AppLayout.jsx";
+import Login from "./pages/Login.jsx";
 
 function App(props) {
     return (
         <BrowserRouter>
             <Routes>
+                <Route element={<AppLayout/>}>
                 <Route index element={<Navigate replace to="dashboard"/>} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/add-workout" element={<AddWorkout />} />
@@ -22,6 +25,8 @@ function App(props) {
                 <Route path="/library" element={<Library />} />
                 <Route path="/store" element={<Store />} />
                 <Route path="/support" element={<Support />} />
+                </Route>
+                <Route path="/login" element={<Login />} />
                 <Route path="*" element={<PageNotFound/>} />
 
             </Routes>
