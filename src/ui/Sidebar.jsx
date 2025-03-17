@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Sidebar(props) {
-    return (
-        <div>SIDEBAR</div>
-    );
+  return <div className="row-span-full bg-red-400">SIDEBAR</div>;
 }
 
 export default Sidebar;

@@ -5,10 +5,12 @@ import Sidebar from "./Sidebar.jsx";
 
 function AppLayout(props) {
   return (
-    <div className=" mt-0.5 mr-6 ml-6">
+    <div className="grid grid-cols-[20rem_1fr] grid-rows-[auto_1fr] h-screen">
       <Header />
       <Sidebar />
-      <Outlet />
+      <main className=" bg-yellow-400 overflow-x-hidden">
+        <Outlet />
+      </main>
     </div>
   );
 }

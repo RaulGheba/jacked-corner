@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Header(props) {
   return (
-    <div className="flex justify-between px-12 font-[poppins] bg-gray-500 text-white py-2">
+    <div className="flex justify-between px-12 font-[poppins] bg-gray-500 text-white py-4 ">
       <NavLink
         className="hover:text-red-400 transition-colors duration-300"
         to="/"
