@@ -8,7 +8,7 @@ function AppLayout(props) {
     <div className="grid grid-cols-[20rem_1fr] grid-rows-[auto_1fr] h-screen">
       <Header />
       <Sidebar />
-      <main className=" bg-yellow-400 overflow-x-hidden">
+      <main className=" bg-gray-400 overflow-x-hidden text-center">
         <Outlet />
       </main>
     </div>
