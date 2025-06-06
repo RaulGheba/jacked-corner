@@ -11,4 +11,4 @@ async function getExercises() {
   return data;
 }
 
-export { getExercises };
+export default getExercises;
