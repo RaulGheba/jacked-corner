@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../auth/authContext.jsx";
+import supabase from "../services/supabase.js";
 
 function Header(props) {
   const { user } = useContext(AuthContext);
@@ -9,7 +10,6 @@ function Header(props) {
       <NavLink
         className="hover:text-red-400 transition-colors duration-300"
         to="/"
-        onClick={() => console.log(user)}
       >
         Home
       </NavLink>
@@ -43,6 +43,18 @@ function Header(props) {
       >
         Support
       </NavLink>
+      {user && (
+        <NavLink
+          className="hover:text-white transition-colors duration-300 text-red-400"
+          onClick={async (e) => {
+            await supabase.auth.signOut();
+            localStorage.removeItem("user");
+            window.location.reload();
+          }}
+        >
+          Logout
+        </NavLink>
+      )}
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import AppLayout from "../ui/AppLayout.jsx";
-import { Form } from "react-router-dom";
+import { Form, useNavigate, useNavigation } from "react-router-dom";
 import { AuthContext } from "../auth/authContext.jsx";
 import supabase from "../services/supabase.js";
 
 function SignUp(props) {
+  const navigation = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useContext(AuthContext);
@@ -25,6 +26,7 @@ function SignUp(props) {
     try {
       await signUp(email, password);
       console.log("✅ Signed up successfully!");
+      // navigation("/welcome");
     } catch (err) {
       console.error("Signup failed:", err.message);
     }

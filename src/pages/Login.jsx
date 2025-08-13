@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import supabase from "../services/supabase";
+import { AuthContext } from "../auth/authContext";
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setUser, handleLogin, user } = useContext(AuthContext);
+  const navigation = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center mt-32 text-2xl">
       <h2 className="text-2xl font-[poppins] mb-4">
@@ -10,7 +15,10 @@ function Login(props) {
       </h2>
       <form
         className="flex flex-col gap-4 w-80"
-        onSubmit={() => console.log("logging in.")}
+        onSubmit={async (e) => {
+          await handleLogin(e, email, password);
+          if (user) navigation("/");
+        }}
       >
         <label className="flex flex-col">
           <span className="font-[poppins] mb-1">Email</span>
