@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const AuthContext = createContext({ user: null, setUser: () => {} });
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+
   async function handleLogin(e, email, password) {
     e.preventDefault();
     let { data, error } = await supabase.auth.signInWithPassword({
@@ -12,6 +13,7 @@ export function AuthProvider({ children }) {
       password: password,
     });
     if (error) {
+      console.log("status:", data.status);
       console.error("Login failed:", error.message);
       alert("Login failed: " + error.message);
       return;

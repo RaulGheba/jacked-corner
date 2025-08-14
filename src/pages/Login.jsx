@@ -7,6 +7,8 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser, handleLogin, user } = useContext(AuthContext);
+  console.log("User from Login:", user);
+
   const navigation = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center mt-32 text-2xl">

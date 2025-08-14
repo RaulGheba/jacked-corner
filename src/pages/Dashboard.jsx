@@ -18,7 +18,7 @@ export default function Dashboard() {
   // }, []);
 
   return (
-    <div className="relative h-[500px] bg-[url('/imgs/pexels-victorfreitas-2261477.jpg')] bg-cover bg-center border-x-4">
+    <div className="relative h-[100%] bg-[url('/imgs/pexels-victorfreitas-2261477.jpg')] bg-cover bg-center border-x-4">
       {/* Optional semi-transparent overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
